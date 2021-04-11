@@ -9,6 +9,7 @@ phases:
       - printenv
   build:
     commands:
+      - docker build -t crystalimage .
   post_build:
     commands:
       - printf '[{"name":"ecsdemo-crystal","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
